@@ -18,8 +18,8 @@ const PlayingBoard = () => {
 			newRow[x] = blocks[randomPick];
 			//console.log(rows[r][x]);
 			console.log(newRow);
-			if (r===0) {newRow[0] = "LTC";newRow[9]= "RTC"}
-			if (r===3) {newRow[0] = "LBC";newRow[9]= "RBC"}
+			if (r===0) {newRow[0] = "LTC";newRow[8]= "RTC"}
+			if (r===4) {newRow[0] = "LBC";newRow[8]= "RBC"}
 			 
 			
 		}
