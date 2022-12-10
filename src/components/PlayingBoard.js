@@ -13,31 +13,36 @@ const blocks = [
 	"RBC",
 	"RTC",
 	"TopT",
-	
+	"LeftT",
+	"RightT",
 ];
+function pickRandomBlock() {
+	let randomPick = Math.floor(Math.random() * 12);
+	return blocks[randomPick];
+}
 
 const PlayingBoard = () => {
 	//console.log(blocks);
+
 	let rows = [];
-	for (let r = 0; r < 5; r++) {
+	for (let y = 0; y < 5; y++) {
 		//console.log('in the r loop');
 		let newRow = [];
 
 		for (let x = 0; x < 9; x++) {
-			let randomPick = Math.floor(Math.random() * 10);
-			//console.log(randomPick);
-			//console.log(blocks[randomPick]);
-			newRow[x] = blocks[randomPick];
-			//console.log(rows[r][x]);
-			console.log(newRow);
-			if (r === 0) {
+			if (y === 0) {
 				newRow[0] = "LTC";
 				newRow[8] = "RTC";
 			}
-			if (r === 4) {
+			if (y === 4) {
 				newRow[0] = "LBC";
 				newRow[8] = "RBC";
 			}
+			newRow[x] = pickRandomBlock();
+			/*newRow[x].good = false;
+			
+*/
+			console.log(newRow);
 		}
 
 		rows.push(newRow);

@@ -8,12 +8,12 @@ const Row = (row) => {
 	let newRow = row.row;
 	return (
 		<>
-		<div id="row" className="row">
-			{newRow.map((x) => {
-				console.log(`eachOne: `,x)
-				return <Eachone component={x} />;
-			})}
-		</div>
+			<div id="row" className="row">
+				{newRow.map((x) => {
+					console.log(`eachOne: `, x);
+					return <Eachone component={x} />;
+				})}
+			</div>
 		</>
 	);
 };

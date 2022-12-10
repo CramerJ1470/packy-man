@@ -244,6 +244,20 @@ i {
 	transform: scaleY(-1);
 }
 
+.block .line.line2.leftvert {
+	transform: translateY(-5rem) rotate(180deg);
+	top: 1rem;
+	left:-5rem;
+	width: 10rem;
+}
+
+.block .line.line1.leftvert {
+	transform: translateY(-4.5rem); 
+	top: 1rem;
+	left: -5rem;
+	width: 10rem;
+}
+
 .botopen {
 	transform: translateY(10rem) scaleY(-1);
 }
@@ -255,6 +269,14 @@ i {
 .svr {
 	transform: scaleX(-1);
 }
+
+.rboc2 {
+	transform: scaleY(-1) translateY(-10rem);
+
+}
+
+
+
 .rtn {
 	transform: translateY(7.5rem);
 }
