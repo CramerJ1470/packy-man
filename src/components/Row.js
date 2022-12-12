@@ -11,7 +11,7 @@ const Row = (row) => {
 			<div id="row" className="row">
 				{newRow.map((x) => {
 					console.log(`eachOne: `, x);
-					return <Eachone component={x} />;
+					return <Eachone item={x.blockName} />;
 				})}
 			</div>
 		</>

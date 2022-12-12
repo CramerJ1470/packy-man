@@ -19,7 +19,9 @@ import { render } from "@testing-library/react";
 let newComp;
 const Eachone = (item) => {
 	console.log(`eachone component:`, item);
-	let comp = item.component;
+	console.log(item);
+	let comp = item.item;
+
 	if (comp === "RBC") {
 		newComp = RBC;
 	} else if (comp === "FW") {
@@ -36,6 +38,7 @@ const Eachone = (item) => {
 		newComp = Empty;
 	} else if (comp === "LTC") {
 		newComp = LTC;
+		console.log(`ltc: `,newComp);
 	} else if (comp === "TopT") {
 		newComp = TopT;
 	} else if (comp === "BotT") {
@@ -45,12 +48,16 @@ const Eachone = (item) => {
 	} else if (comp === "RightT") {
 		newComp = RightT;
 	}
-
+	console.log(`newComp:`,newComp);
 	let code = { html: newComp };
-	console.log(`code: `, code);
+	console.log(`code: `, code.html());
 	let codeHTML = code.html();
-	console.log(codeHTML);
+	console.log(newComp);
 
-	return codeHTML;
+	return (
+		<>
+				{codeHTML}
+		</>		
+	)
 };
 export default Eachone;
