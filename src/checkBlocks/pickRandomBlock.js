@@ -208,7 +208,7 @@ const pickRandomBlock = (x, blocks) => {
 			let bottomBlock = new Block("Empty1");
 			console.log(`bottomBlock for ${x}: `, bottomBlock);
 			return bottomBlock;
-		} else if (x === 27) {
+		} else if (x === 35) {
 			let bottomBlock = new Block("LBC");
 			console.log(`bottomBlock for ${x}: `, bottomBlock);
 			return bottomBlock;
