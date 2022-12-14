@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "../index.css";
 
 import FW from "./FW";
@@ -14,16 +14,32 @@ import LTC from "./LTC";
 import LeftT from "./LeftT";
 import RightT from "./RightT";
 
-import { render } from "@testing-library/react";
-
 let newComp;
-const Eachone = (item) => {
-	console.log(`eachone component:`, item);
-	console.log(item);
-	let comp = item.item;
+const Eachone = ({block}) => { /* item.name sent from other component item={x.blocknam} where x is from a map function {row.row.map((x, index) => {
+	console.log(`eachOne: `, x);
+	return <Eachone item={x.blockName} key={index}/>;
+		})} 
 
-	if (comp === "RBC") {
-		newComp = RBC;
+	 where x is a class Block: 
+	 class Block {
+		constructor(block, x) {
+			this.blockName = block;
+			this.type = (block) => {
+				let choice = block.toLowerCase();
+				return choice;
+			};
+			this.y = Math.floor(Math.round(x % 8)) + x * 8;
+			this.x = x;
+		}
+	}
+	*/
+
+ console.log(`block: `,block);
+console.log('Eachone blockName: ',block.blockName );
+	let comp = block.blockName;   // blockName
+
+	if (comp === "RBC") { //takes a string
+		newComp = RBC; //sets a variable to a component
 	} else if (comp === "FW") {
 		newComp = FW;
 	} else if (comp === "LBC") {
@@ -38,23 +54,21 @@ const Eachone = (item) => {
 		newComp = Empty;
 	} else if (comp === "LTC") {
 		newComp = LTC;
-		console.log(`ltc: `,newComp);
 	} else if (comp === "TopT") {
 		newComp = TopT;
 	} else if (comp === "BotT") {
 		newComp = BotT;
 	} else if (comp === "LeftT") {
 		newComp = LeftT;
-	} else if (comp === "RightT") {
+	} else if (comp === "RightT") {  
 		newComp = RightT;
 	}
-	console.log(`newComp:`,newComp);
-	let code = { html: newComp };
+	let code = { html: newComp }; //sets a variable to the component 
 	console.log(`code: `, code.html());
-	let codeHTML = code.html();
-	console.log(newComp);
-
-	return (
+	let codeHTML = code.html(); //sets a variable to running the Component;
+	
+// Render the component //
+	return (  
 		<>
 				{codeHTML}
 		</>		

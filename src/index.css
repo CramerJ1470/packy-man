@@ -175,7 +175,7 @@ ul {
 }
 
 .outsideCorner1 {
-	background-color: darkslategray transparent transparent;
+	background-color:  darkslategray transparent;
 	height: 0.5rem;
 	border-radius: 0 0 0.5rem;
 	position: absolute;
@@ -269,12 +269,39 @@ i {
 .svr {
 	transform: scaleX(-1);
 }
+.block .line.line2.top2 {
+	left: 0rem;
+	width: 8.75rem;
+	background-color: darkslategray transparent transparent transparent;
+	border-bottom: 0.4rem groove rgb(138, 240, 36);
+	border-radius: 1.5rem 0 0 0;
+}
+
+.block .line.line1.top2 {
+	left: 0rem;
+	border-radius: 0 1.5rem 0 0;
+	
+}
 
 .rboc2 {
 	transform: scaleY(-1) translateY(-10rem);
 
 }
+.block .line.line1.top2.dropBottom {
+	transform:  translateY(6.6rem) ;
+	width: 8.5rem;
+	height: .5rem;
 
+ }
+
+ .block .line.line1.top2.dropBottom.rot180{
+	transform: rotate(180deg) translateY(-6.10rem);
+	height: .5rem;
+	width: 7.5rem
+
+	
+	 
+ }
 
 
 .rtn {
@@ -340,7 +367,25 @@ i {
 	top: 3.5rem;
 }
 
+.block .line.line1.rder {
+	transform: rotate(270deg) translateY(6.5rem);
+	width: 7.75rem;
+	border-radius: 1.5rem 0 0 1.5rem;
+	left: -2rem;
+	top: 4.5rem;
+	background-color: darkslategray transparent transparent transparent;
+	border-bottom: 0.4rem groove rgb(138, 240, 36);
+	border-left: 0;
 
+}
+.block .line.line2.rder {
+	transform: rotate(90deg) translateY(-6.5rem);
+	width: 5.75rem;
+	left: -1.5rem;
+	top: 4.5rem;
+	border-radius: -1.5rem;
+	
+}
 .block .line.line1.fulltop {
 	width: 10rem;
 	left: 0;
@@ -395,17 +440,6 @@ i {
 	top: 0;
 	width: 3.5rem;
 	left: .22em;
-}
-
-.outsideCorner2.rboc {
-	left: .70rem;
-	top: 0;
-	width: 1.5rem;
-}
-.botopen .outsideCorner1.rboc1 {
-	top: .5rem;
-	width: 2.5rem;
-	left: .75rem;
 
 }
 
@@ -418,6 +452,19 @@ i {
 	top: .5rem;
 	width: 2.5rem;
 	left: .75rem;
+
+}
+
+.outsideCorner2.rboc {
+	left: .70rem;
+	top: 0;
+	width: 1.5rem;
+}
+.botopen .outsideCorner1.rboc1 {
+	top: .5rem;
+	width: 2.5rem;
+	left: .75rem;
+	
 
 }
 
@@ -425,4 +472,12 @@ i {
 	top: .5rem;
 	width: 2.5rem;
 	left: .75rem;
+	
+}
+
+.outsideCorner2.rboc.height75 {
+	height: 0.75rem;
+	width: 1.75rem;
+	border-left: solid 2px darkslategray ;
+	 
 }

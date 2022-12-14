@@ -3,18 +3,13 @@ import "../index.css";
 
 import Eachone from "./Eachone";
 
-const Row = (row) => {
-	console.log(`new row: `, row);
-	let newRow = row.row;
+const Row = ({ index, row }) => {
+
 	return (
-		<>
-			<div id="row" className="row">
-				{newRow.map((x) => {
-					console.log(`eachOne: `, x);
-					return <Eachone item={x.blockName} />;
-				})}
-			</div>
-		</>
+		<div className="row">
+			{row.map((item ) => {return <Eachone block={item} />})}
+
+		</div>
 	);
 };
 export default Row;
