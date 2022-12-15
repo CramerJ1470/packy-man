@@ -42,8 +42,8 @@ const Eachone = ({block}) => { /* item.name sent from other component item={x.bl
 	}
 	*/
 
- console.log(`block: `,block);
-console.log('Eachone blockName: ',block.blockName );
+ //console.log(`block: `,block);
+//console.log('Eachone blockName: ',block.blockName );
 	let comp = block.blockName;   // blockName
 
 	if (comp === "RBC") { //takes a string
@@ -87,7 +87,7 @@ console.log('Eachone blockName: ',block.blockName );
 	} 
 
 	let code = { html: newComp }; //sets a variable to the component 
-	console.log(`code: `, code.html());
+//	console.log(`code: `, code.html());
 	let codeHTML = code.html(); //sets a variable to running the Component;
 	
 // Render the component //

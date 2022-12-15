@@ -13,19 +13,19 @@ const PlayingBoard = () => {
 	//console.log(blocks);
 	let blocks = [];
 	for (let x = 0; x < 77; x++) {
-		console.log(`blocks: x`, blocks, x);
-		console.log(`x:` + x);
+//		console.log(`blocks: x`, blocks, x);
+//		console.log(`x:` + x);
 		let block = pickRandomBlock(x, blocks);
-		console.log(`returned block:`, block);
+//		console.log(`returned block:`, block);
 		blocks.push(block);
-		console.log(blocks);
+//		console.log(blocks);
 	}
 	let rows = [];
 	let newRow = [];
 	for (let u = 0; u < blocks.length; u++) {
-		console.log(`u: `, u);
-		console.log(`blocks: `, blocks);
-		console.log(blocks[u]);
+//		console.log(`u: `, u);
+//		console.log(`blocks: `, blocks);
+//		console.log(blocks[u]);
 		//if (u === 11 || u === 17 || u === 26 || u === 35 || u === 44) { old version
 		if (
 			u === 10 ||
@@ -36,21 +36,21 @@ const PlayingBoard = () => {
 			u === 65 ||
 			u === 76
 		) {
-			console.log(u, blocks[u]);
+//			console.log(u, blocks[u]);
 			newRow.push(blocks[u]);
 			rows.push(newRow);
 			newRow = [];
 		} else {
 			newRow.push(blocks[u]);
-			console.log(u, blocks[u]);
+//			console.log(u, blocks[u]);
 		}
 	}
-	console.log(rows);
+//	console.log(rows);
 
 	return (
 		<>
 			 {rows.map((row, index) => {
-			console.log(`pa: `, row, index);
+			
 		return <Row index={index} row={row} />;
 })}
 		</>
