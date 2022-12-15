@@ -13,6 +13,14 @@ import BotT from "./BotT";
 import LTC from "./LTC";
 import LeftT from "./LeftT";
 import RightT from "./RightT";
+import BottDE from "./BottDE";
+import TopDE from "./TopDE";
+import LeftDE from "./LeftDE";
+import RightDE from "./RightDE";
+import HorizBord from "./HorizBord";
+import VertBord from "./VertBord";
+import CornBord from "./CornBord";
+
 
 let newComp;
 const Eachone = ({block}) => { /* item.name sent from other component item={x.blocknam} where x is from a map function {row.row.map((x, index) => {
@@ -62,7 +70,22 @@ console.log('Eachone blockName: ',block.blockName );
 		newComp = LeftT;
 	} else if (comp === "RightT") {  
 		newComp = RightT;
-	}
+	} else if (comp === "RightDE") {  
+		newComp = RightDE;
+	} else if (comp === "LeftDE") {  
+		newComp = LeftDE;
+	} else if (comp === "TopDE") {  
+		newComp = TopDE;
+	} else if (comp === "BottDE") {  
+		newComp = BottDE;
+	}  else if (comp === "HorizBord") {  
+		newComp = HorizBord;
+	} else if (comp === "VertBord") {  
+		newComp = VertBord;
+	} else if (comp === "CornBord") {  
+		newComp = CornBord;
+	} 
+
 	let code = { html: newComp }; //sets a variable to the component 
 	console.log(`code: `, code.html());
 	let codeHTML = code.html(); //sets a variable to running the Component;

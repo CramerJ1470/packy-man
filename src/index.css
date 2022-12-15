@@ -22,6 +22,35 @@ code {
 	text-align: center;
 }
 
+.blockhoriz {
+	background-color: rgb(95, 38, 109);
+	cursor: pointer;
+	width: 10rem;
+	height: 2rem;
+	position: relative;
+	border: 0.4rem groove rgb(138, 240, 36);
+	text-align: center;
+}
+.blockvert {
+	background-color: rgb(95, 38, 109);
+	cursor: pointer;
+	width: 2rem;
+	height: 10rem;
+	position: relative;
+	border: 0.4rem groove rgb(138, 240, 36);
+	text-align: center;
+}
+
+.blockcorn {
+	background-color: rgb(95, 38, 109);
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
+	position: relative;
+	border: 0.4rem groove rgb(138, 240, 36);
+	text-align: center;
+}
+
 .block .line {
 	background-color: darkslategray;
 	height: 0.5rem;
@@ -29,7 +58,6 @@ code {
 	top: 1.5rem;
 	left: 1.25rem;
 	border-bottom: 0.4rem groove rgb(138, 240, 36);
-	
 }
 .block .line1 {
 	width: 7.5rem;
@@ -175,7 +203,7 @@ ul {
 }
 
 .outsideCorner1 {
-	background-color:  darkslategray transparent;
+	background-color: darkslategray transparent;
 	height: 0.5rem;
 	border-radius: 0 0 0.5rem;
 	position: absolute;
@@ -247,12 +275,12 @@ i {
 .block .line.line2.leftvert {
 	transform: translateY(-5rem) rotate(180deg);
 	top: 1rem;
-	left:-5rem;
+	left: -5rem;
 	width: 10rem;
 }
 
 .block .line.line1.leftvert {
-	transform: translateY(-4.5rem); 
+	transform: translateY(-4.5rem);
 	top: 1rem;
 	left: -5rem;
 	width: 10rem;
@@ -280,29 +308,22 @@ i {
 .block .line.line1.top2 {
 	left: 0rem;
 	border-radius: 0 1.5rem 0 0;
-	
 }
 
 .rboc2 {
 	transform: scaleY(-1) translateY(-10rem);
-
 }
 .block .line.line1.top2.dropBottom {
-	transform:  translateY(6.6rem) ;
+	transform: translateY(6.6rem);
 	width: 8.5rem;
-	height: .5rem;
+	height: 0.5rem;
+}
 
- }
-
- .block .line.line1.top2.dropBottom.rot180{
-	transform: rotate(180deg) translateY(-6.10rem);
-	height: .5rem;
-	width: 7.5rem
-
-	
-	 
- }
-
+.block .line.line1.top2.dropBottom.rot180 {
+	transform: rotate(180deg) translateY(-6.1rem);
+	height: 0.5rem;
+	width: 7.5rem;
+}
 
 .rtn {
 	transform: translateY(7.5rem);
@@ -376,7 +397,6 @@ i {
 	background-color: darkslategray transparent transparent transparent;
 	border-bottom: 0.4rem groove rgb(138, 240, 36);
 	border-left: 0;
-
 }
 .block .line.line2.rder {
 	transform: rotate(90deg) translateY(-6.5rem);
@@ -384,12 +404,10 @@ i {
 	left: -1.5rem;
 	top: 4.5rem;
 	border-radius: -1.5rem;
-	
 }
 .block .line.line1.fulltop {
 	width: 10rem;
 	left: 0;
-	
 }
 
 .block .line.line2 {
@@ -427,11 +445,11 @@ i {
 }
 
 .row {
-	display:flex;
+	display: flex;
 }
 
 .svr .outsideCorner2.rboc {
-	left: .71rem;
+	left: 0.71rem;
 	top: 0;
 	width: 1.5rem;
 }
@@ -439,45 +457,39 @@ i {
 .svr .outsideCorner1.rboc1 {
 	top: 0;
 	width: 3.5rem;
-	left: .22em;
-
+	left: 0.22em;
 }
 
 .outsideCorner2.rboc {
-	left: .70rem;
+	left: 0.7rem;
 	top: 0;
 	width: 1.5rem;
 }
 .botopen .outsideCorner1.rboc1 {
-	top: .5rem;
+	top: 0.5rem;
 	width: 2.5rem;
-	left: .75rem;
-
+	left: 0.75rem;
 }
 
 .outsideCorner2.rboc {
-	left: .70rem;
+	left: 0.7rem;
 	top: 0;
 	width: 1.5rem;
 }
 .botopen .outsideCorner1.rboc1 {
-	top: .5rem;
+	top: 0.5rem;
 	width: 2.5rem;
-	left: .75rem;
-	
-
+	left: 0.75rem;
 }
 
 .topopenleft {
-	top: .5rem;
+	top: 0.5rem;
 	width: 2.5rem;
-	left: .75rem;
-	
+	left: 0.75rem;
 }
 
 .outsideCorner2.rboc.height75 {
 	height: 0.75rem;
 	width: 1.75rem;
-	border-left: solid 2px darkslategray ;
-	 
+	border-left: solid 2px darkslategray;
 }
