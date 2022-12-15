@@ -215,17 +215,18 @@ const pickRandomBlock = (x, blocks) => {
 		} else if (x%11 === 0 && x !== 0 && x !== 66) {
 			newBlock = new Block("VertBord", x);
 			console.log(`newBlock:`, newBlock);
-		} else if (x !== 10 && x % 11 -1 === 0) {
+		} else if ((x+1)%11===0) {
+
 			newBlock = new Block("VertBord", x);
 			console.log(`newBlock:`, newBlock);
-		} else if (x > 11 && x < 53) {
+		} else if (x > 10 && x < 54) {
 			
 			matrix = {
 				a: blocks[x - 1].properties.c,
 				b: blocks[x - 11].properties.d,
 			};
 			newBlock = matrixMatch(matrix, blocks1);
-		}else if (x > 56 && x < 64) {
+		}else if (x > 55 && x < 65) {
 			let matrix = {
 				a: blocks[x - 1].properties.c,
 				b: blocks[x - 11].properties.d,
@@ -235,14 +236,7 @@ const pickRandomBlock = (x, blocks) => {
 		} else if (x > 66 && x < 76) {
 			newBlock = new Block("HorizBord", x);
 			console.log(`newBlock:`, newBlock);
-		} else if (x === 35) {
-			let matrix = {
-				a: blocks[34].properties.c,
-				b: blocks[x - 9].properties.d,
-				d: "open",
-			};
-			newBlock = matrixMatch(matrix, blocks1);
-		}
+		} 
 		console.log(`pickBlockEnd block:`, newBlock);
 		return newBlock;
 	}

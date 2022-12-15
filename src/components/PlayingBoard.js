@@ -7,7 +7,7 @@ import Eachone from "./Eachone";
 const PlayingBoard = () => {
 	//console.log(blocks);
 	let blocks = [];
-	for (let x = 0; x < 45; x++) {
+	for (let x = 0; x < 77; x++) {
 		console.log(`blocks: x`, blocks, x);
 		console.log(`x:` + x);
 		let block = pickRandomBlock(x, blocks);

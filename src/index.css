@@ -28,7 +28,6 @@ code {
 	width: 10rem;
 	height: 2rem;
 	position: relative;
-	border: 0.4rem groove rgb(138, 240, 36);
 	text-align: center;
 }
 .blockvert {
@@ -37,8 +36,8 @@ code {
 	width: 2rem;
 	height: 10rem;
 	position: relative;
-	border: 0.4rem groove rgb(138, 240, 36);
 	text-align: center;
+	 
 }
 
 .blockcorn {
@@ -47,7 +46,7 @@ code {
 	width: 2rem;
 	height: 2rem;
 	position: relative;
-	border: 0.4rem groove rgb(138, 240, 36);
+	
 	text-align: center;
 }
 
