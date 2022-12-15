@@ -1,4 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# This code written by John E. Cramer 
+# GAARD 
+# https://github.com/CramerJ1470/packy-man.git
 
 # dependencies
 /node_modules

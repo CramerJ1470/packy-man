@@ -1,3 +1,5 @@
+
+
 const pickRandomBlock = (x, blocks) => {
 	console.log(`starting pickrand x:`, x);
 	console.log(`starting pickrand blocks: `, blocks);
@@ -196,6 +198,10 @@ const pickRandomBlock = (x, blocks) => {
 	// "horizBord",
 	// "vertBord",
 	// "cornBord"
+
+	// This code written by John E. Cramer 
+	// GAARD 
+	// https://github.com/CramerJ1470/packy-man.git
 	let newBlock;
 
 	function pickBlock(x, blocks, blocks1) {

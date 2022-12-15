@@ -1,3 +1,6 @@
+// This code written by John E. Cramer 
+	// GAARD 
+	// https://github.com/CramerJ1470/packy-man.git
 import React from "react";
 import "../index.css";
 import pickRandomBlock from "../checkBlocks/pickRandomBlock";
@@ -48,7 +51,7 @@ const PlayingBoard = () => {
 		<>
 			 {rows.map((row, index) => {
 			console.log(`pa: `, row, index);
-			return <Row index={index} row={row} />;
+		return <Row index={index} row={row} />;
 })}
 		</>
 	);
