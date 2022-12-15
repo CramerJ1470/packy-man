@@ -224,9 +224,9 @@ const pickRandomBlock = (x, blocks) => {
 					c: "closed",
 					d: "open",
 				};
-				newBlock = matrixMatch(matrix, blocks1,x);
+				newBlock = matrixMatch(matrix, blocks1, x);
 			} else if (x === 20 && blocks[x - 1].properties.c === "closed") {
-				newBlock = new Block("BottDE",x);
+				newBlock = new Block("BottDE", x);
 			} else if (
 				(x + 2) % 11 === 0 &&
 				blocks[x - 1].properties.c === "open" &&
@@ -238,7 +238,7 @@ const pickRandomBlock = (x, blocks) => {
 					c: "closed",
 					d: "open",
 				};
-				newBlock = matrixMatch(matrix, blocks1,x);
+				newBlock = matrixMatch(matrix, blocks1, x);
 			} else if (
 				(x + 2) % 11 === 0 &&
 				blocks[x - 1].properties.c === "closed" &&
@@ -250,7 +250,7 @@ const pickRandomBlock = (x, blocks) => {
 					c: "closed",
 					d: "open",
 				};
-				newBlock = matrixMatch(matrix, blocks1,x);
+				newBlock = matrixMatch(matrix, blocks1, x);
 			} else if (
 				(x + 2) % 11 === 0 &&
 				blocks[x - 1].properties.c === "closed" &&
@@ -267,14 +267,14 @@ const pickRandomBlock = (x, blocks) => {
 					b: "open",
 					c: "closed",
 				};
-				newBlock = matrixMatch(matrix, blocks1,x);
+				newBlock = matrixMatch(matrix, blocks1, x);
 			} else {
 				matrix = {
 					a: blocks[x - 1].properties.c,
 					b: blocks[x - 11].properties.d,
 					d: Math.random() < 0.5 ? "open" : "closed",
 				};
-				newBlock = matrixMatch(matrix, blocks1,x);
+				newBlock = matrixMatch(matrix, blocks1, x);
 			}
 		}
 		if (
@@ -295,6 +295,12 @@ const pickRandomBlock = (x, blocks) => {
 			blocks[x - 11].properties.d === "closed"
 		) {
 			newBlock = new Block("Empty", x);
+		} else if (
+			x === 64 &&
+			blocks[x - 1].properties.c === "open" &&
+			blocks[x - 11].properties.d === "open"
+		) {
+			newBlock = new Block("RBC", x);
 		} else if (x > 55 && x < 64) {
 			let matrix = {
 				a: blocks[x - 1].properties.c,
@@ -310,14 +316,14 @@ const pickRandomBlock = (x, blocks) => {
 		return newBlock;
 	}
 	let blocksToMatch = [];
-	function matrixMatch(matrix, blocks1,x) {
+	function matrixMatch(matrix, blocks1, x) {
 		let blocksToMatch = [];
 		let blockChosen;
 		console.log(`matrixMatch blocks:`, blocks1);
 		console.log(`matrix: `, matrix);
 		console.log("blocks1:", blocks1);
 		blocks1.forEach((block) => {
-			let newComp = new Block(block,x); // blockName
+			let newComp = new Block(block, x); // blockName
 
 			//let code = { html: newComp }; sets a variable to the component
 			console.log(`block being checked for match: `, newComp);
