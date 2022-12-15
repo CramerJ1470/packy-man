@@ -3,6 +3,8 @@ import "../index.css";
 import pickRandomBlock from "../checkBlocks/pickRandomBlock";
 import Row from "./Row";
 import Eachone from "./Eachone";
+import BotT from "./BotT";
+import TopT from "./TopT";
 
 const PlayingBoard = () => {
 	//console.log(blocks);
@@ -44,10 +46,10 @@ const PlayingBoard = () => {
 
 	return (
 		<>
-			{rows.map((row, index) => {
-				console.log(`pa: `, row, index);
-				return <Row index={index} row={row} />;
-			})}
+			 {rows.map((row, index) => {
+			console.log(`pa: `, row, index);
+			return <Row index={index} row={row} />;
+})}
 		</>
 	);
 };

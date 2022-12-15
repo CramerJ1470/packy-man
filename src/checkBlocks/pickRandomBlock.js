@@ -12,9 +12,9 @@ const pickRandomBlock = (x, blocks) => {
 					case "bott":
 						properties = {
 							a: "open",
-							b: "open",
+							b: "closed",
 							c: "open",
-							d: "closed",
+							d: "open",
 						};
 						break;
 					case "ltc":
@@ -84,9 +84,9 @@ const pickRandomBlock = (x, blocks) => {
 					case "topt":
 						properties = {
 							a: "open",
-							b: "closed",
+							b: "open",
 							c: "open",
-							d: "open",
+							d: "closed",
 						};
 						break;
 					case "leftt":
@@ -188,67 +188,136 @@ const pickRandomBlock = (x, blocks) => {
 		"LeftT",
 		"RightT",
 		"Empty",
-	
 	];
-//	"TopDE",
-// "BottDE",
-// "RightDE",
-// "LeftDE",
-// "horizBord",
-// "vertBord",
-// "cornBord"
+	//	"TopDE",
+	// "BottDE",
+	// "RightDE",
+	// "LeftDE",
+	// "horizBord",
+	// "vertBord",
+	// "cornBord"
 	let newBlock;
 
- 
 	function pickBlock(x, blocks, blocks1) {
 		console.log(`x: ${x}`);
 		console.log(`blocks: `, blocks);
 		console.log(`blocks1:`, blocks1);
 		let matrix;
-		
+
 		if (x === 0 || x === 10 || x === 66 || x === 76) {
 			newBlock = new Block("CornBord", x);
 			console.log(`newBlock:`, newBlock);
-		} else if (x > 0 && x  < 10) {
+		} else if (x > 0 && x < 10) {
 			newBlock = new Block("HorizBord", x);
 			console.log(`newBlock:`, newBlock);
-		} else if (x%11 === 0 && x !== 0 && x !== 66) {
+		} else if (x % 11 === 0 && x !== 0 && x !== 66) {
 			newBlock = new Block("VertBord", x);
 			console.log(`newBlock:`, newBlock);
-		} else if ((x+1)%11===0) {
-
+		} else if ((x + 1) % 11 === 0) {
 			newBlock = new Block("VertBord", x);
 			console.log(`newBlock:`, newBlock);
 		} else if (x > 10 && x < 54) {
-			
-			matrix = {
-				a: blocks[x - 1].properties.c,
-				b: blocks[x - 11].properties.d,
-			};
-			newBlock = matrixMatch(matrix, blocks1);
-		}else if (x > 55 && x < 65) {
+			if (x === 20 && blocks[x - 1].properties.c === "open") {
+				matrix = {
+					a: "open",
+					b: "closed",
+					c: "closed",
+					d: "open",
+				};
+				newBlock = matrixMatch(matrix, blocks1,x);
+			} else if (x === 20 && blocks[x - 1].properties.c === "closed") {
+				newBlock = new Block("BottDE",x);
+			} else if (
+				(x + 2) % 11 === 0 &&
+				blocks[x - 1].properties.c === "open" &&
+				blocks[x - 11].properties.d === "closed"
+			) {
+				matrix = {
+					a: "open",
+					b: "closed",
+					c: "closed",
+					d: "open",
+				};
+				newBlock = matrixMatch(matrix, blocks1,x);
+			} else if (
+				(x + 2) % 11 === 0 &&
+				blocks[x - 1].properties.c === "closed" &&
+				blocks[x - 11].properties.d === "open"
+			) {
+				matrix = {
+					a: "closed",
+					b: "open",
+					c: "closed",
+					d: "open",
+				};
+				newBlock = matrixMatch(matrix, blocks1,x);
+			} else if (
+				(x + 2) % 11 === 0 &&
+				blocks[x - 1].properties.c === "closed" &&
+				blocks[x - 11].properties.d === "closed"
+			) {
+				newBlock = new Block("Empty", x);
+			} else if (
+				(x + 2) % 11 === 0 &&
+				blocks[x - 1].properties.c === "open" &&
+				blocks[x - 11].properties.d === "open"
+			) {
+				matrix = {
+					a: "open",
+					b: "open",
+					c: "closed",
+				};
+				newBlock = matrixMatch(matrix, blocks1,x);
+			} else {
+				matrix = {
+					a: blocks[x - 1].properties.c,
+					b: blocks[x - 11].properties.d,
+					d: Math.random() < 0.5 ? "open" : "closed",
+				};
+				newBlock = matrixMatch(matrix, blocks1,x);
+			}
+		}
+		if (
+			x === 64 &&
+			blocks[x - 1].properties.c === "open" &&
+			blocks[x - 11].properties.d === "closed"
+		) {
+			newBlock = new Block("RightDE", x);
+		} else if (
+			x === 64 &&
+			blocks[x - 1].properties.c === "closed" &&
+			blocks[x - 11].properties.d === "open"
+		) {
+			newBlock = new Block("TopDE", x);
+		} else if (
+			x === 64 &&
+			blocks[x - 1].properties.c === "closed" &&
+			blocks[x - 11].properties.d === "closed"
+		) {
+			newBlock = new Block("Empty", x);
+		} else if (x > 55 && x < 64) {
 			let matrix = {
 				a: blocks[x - 1].properties.c,
 				b: blocks[x - 11].properties.d,
-				d: "closed"
+				d: "closed",
 			};
 			newBlock = matrixMatch(matrix, blocks1);
 		} else if (x > 66 && x < 76) {
 			newBlock = new Block("HorizBord", x);
 			console.log(`newBlock:`, newBlock);
-		} 
+		}
 		console.log(`pickBlockEnd block:`, newBlock);
 		return newBlock;
 	}
 	let blocksToMatch = [];
-	function matrixMatch(matrix, blocks1) {
+	function matrixMatch(matrix, blocks1,x) {
 		let blocksToMatch = [];
 		let blockChosen;
 		console.log(`matrixMatch blocks:`, blocks1);
 		console.log(`matrix: `, matrix);
 		console.log("blocks1:", blocks1);
 		blocks1.forEach((block) => {
-			let newComp = new Block(block); // blockName
+			let newComp = new Block(block,x); // blockName
 
 			//let code = { html: newComp }; sets a variable to the component
 			console.log(`block being checked for match: `, newComp);
@@ -273,11 +342,12 @@ const pickRandomBlock = (x, blocks) => {
 				if (matrix.b && block.properties.b === matrix.b) {
 					count++;
 					console.log(`matched b`);
-					}
+				}
 				if (matrix.c && block.properties.c === matrix.c) {
 					count++;
 					console.log(`matched c`);
 				}
+
 				if (matrix.d && block.properties.d === matrix.d) {
 					count++;
 					console.log("matched d");
@@ -306,7 +376,6 @@ const pickRandomBlock = (x, blocks) => {
 	}
 	pickBlock(x, blocks, blocks1);
 	return newBlock;
-	
 };
 
 export default pickRandomBlock;
