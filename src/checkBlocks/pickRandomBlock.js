@@ -304,6 +304,7 @@ const pickRandomBlock = (x, blocks) => {
 			newBlock = new Block("HorizBord", x);
 		return newBlock;
 	}
+}
 
 	function matrixMatch(matrix, blocks1, x) {
 		let blocksToMatch = [];
