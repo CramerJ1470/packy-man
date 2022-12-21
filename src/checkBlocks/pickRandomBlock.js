@@ -302,9 +302,10 @@ const pickRandomBlock = (x, blocks) => {
 			newBlock = matrixMatch(matrix, blocks1);
 		} else if (x > 66 && x < 76) {
 			newBlock = new Block("HorizBord", x);
+			
+		}
 		return newBlock;
 	}
-}
 
 	function matrixMatch(matrix, blocks1, x) {
 		let blocksToMatch = [];
@@ -313,13 +314,11 @@ const pickRandomBlock = (x, blocks) => {
 			let newComp = new Block(block, x); // blockName
 
 			//let code = { html: newComp }; sets a variable to the component
-		
+
 			blocksToMatch.push(newComp);
 		});
 		blockChosen = check(matrix, blocksToMatch, x);
 
-
-	
 		if (x > 0 && blockChosen === blocks[x - 1]) {
 			check(matrix, blocksToMatch);
 		}
@@ -358,8 +357,7 @@ const pickRandomBlock = (x, blocks) => {
 		let name1 = block.blockName;
 		let type = name1.toLowerCase();
 		let positions;
-		let j = -3
-		;
+		let j = -3;
 		const a = {
 			x: j + (x % 11) * 10 - 2.5,
 			y: Math.floor(x / 12) * 10,
@@ -396,25 +394,25 @@ const pickRandomBlock = (x, blocks) => {
 			case "bott":
 				positions = {
 					horiz: [b, d],
-					vert: [f, h]
+					vert: [f, h],
 				};
 				break;
 			case "ltc":
 				positions = {
 					horiz: [b, d],
-					vert: [f, h]
+					vert: [f, h],
 				};
 				break;
 			case "fw":
 				positions = {
 					horiz: [b, d],
-					vert: [f, h]
+					vert: [f, h],
 				};
 				break;
 			case "lbc":
 				positions = {
 					horiz: [b, d],
-					vert: [f]
+					vert: [f],
 				};
 				break;
 			case "blocksv":
@@ -455,7 +453,7 @@ const pickRandomBlock = (x, blocks) => {
 				break;
 			case "leftt":
 				positions = {
-					horiz: [b,d],
+					horiz: [b, d],
 					vert: [f, h],
 				};
 				break;
@@ -480,7 +478,7 @@ const pickRandomBlock = (x, blocks) => {
 			case "bottde":
 				positions = {
 					horiz: [b],
-					vert: [f,h],
+					vert: [f, h],
 				};
 				break;
 			case "leftde":
@@ -512,7 +510,7 @@ const pickRandomBlock = (x, blocks) => {
 		}
 		return positions;
 	}
-	
+
 	newBlock = pickBlock(x, blocks, blocks1);
 	newBlock.positions = createStroopWafels(newBlock, x);
 	return newBlock;
