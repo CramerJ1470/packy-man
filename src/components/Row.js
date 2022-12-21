@@ -3,11 +3,11 @@ import "../index.css";
 
 import Eachone from "./Eachone";
 
-const Row = ({ index, row }) => {
+const Row = ({ row , index }) => {
 
 	return (
 		<div className="row">
-			{row.map((item ) => {return <Eachone block={item} />})}
+			{row.map((block ) => {console.log(`rowMap block:`,block);return <Eachone block={block} index={index} />})}
 
 		</div>
 	);

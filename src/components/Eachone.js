@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../index.css";
 
 import FW from "./FW";
@@ -20,32 +20,15 @@ import RightDE from "./RightDE";
 import HorizBord from "./HorizBord";
 import VertBord from "./VertBord";
 import CornBord from "./CornBord";
+import StroopWafels from "./StroopWafels";
+import getPillLocations from "../checkBlocks/getPillLocations"; 
 
 
 let newComp;
-const Eachone = ({block}) => { /* item.name sent from other component item={x.blocknam} where x is from a map function {row.row.map((x, index) => {
-	console.log(`eachOne: `, x);
-	return <Eachone item={x.blockName} key={index}/>;
-		})} 
-
-	 where x is a class Block: 
-	 class Block {
-		constructor(block, x) {
-			this.blockName = block;
-			this.type = (block) => {
-				let choice = block.toLowerCase();
-				return choice;
-			};
-			this.y = Math.floor(Math.round(x % 8)) + x * 8;
-			this.x = x;
-		}
-	}
-	*/
-
- //console.log(`block: `,block);
-//console.log('Eachone blockName: ',block.blockName );
+const Eachone = ({block,index}) => {
 	let comp = block.blockName;   // blockName
-
+	console.log(`Eachone block:`,block);
+	console.log(`stroop block number:`,block.x);
 	if (comp === "RBC") { //takes a string
 		newComp = RBC; //sets a variable to a component
 	} else if (comp === "FW") {
@@ -85,16 +68,20 @@ const Eachone = ({block}) => { /* item.name sent from other component item={x.bl
 	} else if (comp === "CornBord") {  
 		newComp = CornBord;
 	} 
-
+	console.log(`Eachone block: `,block);
 	let code = { html: newComp }; //sets a variable to the component 
 //	console.log(`code: `, code.html());
 	let codeHTML = code.html(); //sets a variable to running the Component;
 	
+	let stroopWafels = getPillLocations(block, block.x);
+	console.log(`got past stroopwafels`);
 // Render the component //
 	return (  
 		<>
 				{codeHTML}
+				<StroopWafels stroopWafels={stroopWafels} />
 		</>		
 	)
 };
 export default Eachone;
+// line 79 <StroopWafels stroopWafels={stroopWafels} />

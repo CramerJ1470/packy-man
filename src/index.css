@@ -107,8 +107,8 @@ code {
 }
 
 .playingBoard {
-	width: 90rem;
-	height: 50rem;
+	width: 100rem;
+	height: 70rem;
 	margin: 0.5rem;
 	display: inline-block;
 	background-color: darkblue;
@@ -492,3 +492,27 @@ i {
 	width: 1.75rem;
 	border-left: solid 2px darkslategray;
 }
+
+.fa-cookie-bite {
+    color: white;
+  }
+  
+  .fa-cookie-bite:hover {
+    color: red;
+  }
+  
+  .fa-stroopwafel {
+    color: white;
+	width: 0.5rem;
+	height: 0.5rem;
+	position:absolute;
+	z-index: 1;
+	
+	
+  }
+  
+  .fa-stroopwafel:hover {
+    color: blue;
+  }  
+
+  

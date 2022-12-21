@@ -5,9 +5,7 @@ import React from "react";
 import "../index.css";
 import pickRandomBlock from "../checkBlocks/pickRandomBlock";
 import Row from "./Row";
-import Eachone from "./Eachone";
-import BotT from "./BotT";
-import TopT from "./TopT";
+
 
 const PlayingBoard = () => {
 	//console.log(blocks);
@@ -16,7 +14,7 @@ const PlayingBoard = () => {
 //		console.log(`blocks: x`, blocks, x);
 //		console.log(`x:` + x);
 		let block = pickRandomBlock(x, blocks);
-//		console.log(`returned block:`, block);
+		console.log(`returned block:`, block);
 		blocks.push(block);
 //		console.log(blocks);
 	}
