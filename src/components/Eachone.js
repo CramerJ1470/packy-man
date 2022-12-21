@@ -27,8 +27,7 @@ import getPillLocations from "../checkBlocks/getPillLocations";
 let newComp;
 const Eachone = ({block,index}) => {
 	let comp = block.blockName;   // blockName
-	console.log(`Eachone block:`,block);
-	console.log(`stroop block number:`,block.x);
+
 	if (comp === "RBC") { //takes a string
 		newComp = RBC; //sets a variable to a component
 	} else if (comp === "FW") {
@@ -68,13 +67,13 @@ const Eachone = ({block,index}) => {
 	} else if (comp === "CornBord") {  
 		newComp = CornBord;
 	} 
-	console.log(`Eachone block: `,block);
+
 	let code = { html: newComp }; //sets a variable to the component 
-//	console.log(`code: `, code.html());
+
 	let codeHTML = code.html(); //sets a variable to running the Component;
 	
 	let stroopWafels = getPillLocations(block, block.x);
-	console.log(`got past stroopwafels`);
+	
 // Render the component //
 	return (  
 		<>

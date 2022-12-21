@@ -7,7 +7,7 @@ const Row = ({ row , index }) => {
 
 	return (
 		<div className="row">
-			{row.map((block ) => {console.log(`rowMap block:`,block);return <Eachone block={block} index={index} />})}
+			{row.map((block ) => {return <Eachone block={block} index={index} />})}
 
 		</div>
 	);

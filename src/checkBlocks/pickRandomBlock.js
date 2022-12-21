@@ -1,7 +1,4 @@
 const pickRandomBlock = (x, blocks) => {
-	console.log(`starting pickrand x:`, x);
-	console.log(`starting pickrand blocks: `, blocks);
-
 	class Block {
 		constructor(block, x) {
 			this.blockName = block;
@@ -200,23 +197,16 @@ const pickRandomBlock = (x, blocks) => {
 	let newBlock;
 
 	function pickBlock(x, blocks, blocks1) {
-			console.log(`x: ${x}`);
-			console.log(`blocks: `, blocks);
-			console.log(`blocks1:`, blocks1);
 		let matrix;
 
 		if (x === 0 || x === 10 || x === 66 || x === 76) {
 			newBlock = new Block("CornBord", x);
-			//		console.log(`newBlock:`, newBlock);
 		} else if (x > 0 && x < 10) {
 			newBlock = new Block("HorizBord", x);
-			//		console.log(`newBlock:`, newBlock);
 		} else if (x % 11 === 0 && x !== 0 && x !== 66) {
 			newBlock = new Block("VertBord", x);
-			//		console.log(`newBlock:`, newBlock);
 		} else if ((x + 1) % 11 === 0) {
 			newBlock = new Block("VertBord", x);
-			//		console.log(`newBlock:`, newBlock);
 		} else if (x > 10 && x < 54) {
 			if (x === 20 && blocks[x - 1].properties.c === "open") {
 				matrix = {
@@ -312,30 +302,23 @@ const pickRandomBlock = (x, blocks) => {
 			newBlock = matrixMatch(matrix, blocks1);
 		} else if (x > 66 && x < 76) {
 			newBlock = new Block("HorizBord", x);
-			//		console.log(`newBlock:`, newBlock);
-		}
-		//		console.log(`pickBlockEnd block:`, newBlock);
 		return newBlock;
 	}
 
 	function matrixMatch(matrix, blocks1, x) {
 		let blocksToMatch = [];
 		let blockChosen;
-		//	console.log(`matrixMatch blocks:`, blocks1);
-		//	console.log(`matrix: `, matrix);
-		//	console.log("blocks1:", blocks1);
 		blocks1.forEach((block) => {
 			let newComp = new Block(block, x); // blockName
 
 			//let code = { html: newComp }; sets a variable to the component
-			//		console.log(`block being checked for match: `, newComp);
-			//let codeHTML = code.html();
+		
 			blocksToMatch.push(newComp);
 		});
 		blockChosen = check(matrix, blocksToMatch, x);
 
 
-		//	console.log(blockChosen, `:`, blocks[x - 1]);
+	
 		if (x > 0 && blockChosen === blocks[x - 1]) {
 			check(matrix, blocksToMatch);
 		}
@@ -344,34 +327,23 @@ const pickRandomBlock = (x, blocks) => {
 	function check(matrix, blocksToMatch, x) {
 		let matrixMatches = [];
 		blocksToMatch.forEach((block) => {
-			//			console.log(`block to try as match: `, block);
-			//			console.log(
-			//				`Matrix Match of ${matrix.a} to ${block.properties.c}`
-			//			);
 			let checkCount = Object.keys(matrix).length;
 			let count = 0;
 			if (matrix.a && block.properties.a === matrix.a) {
 				count++;
-				//				console.log(`matched a`);
 			}
 			if (matrix.b && block.properties.b === matrix.b) {
 				count++;
-				//				console.log(`matched b`);
 			}
 			if (matrix.c && block.properties.c === matrix.c) {
 				count++;
-				//				console.log(`matched c`);
 			}
 
 			if (matrix.d && block.properties.d === matrix.d) {
 				count++;
-				//				console.log("matched d");
 			}
 			if (count === checkCount) {
-				//				console.log(`Matched block!!! Wahoo!! block:`, block);
-				//				console.log(`block Chosen: `, block);
 				matrixMatches.push(block);
-				//				console.log(`mixedMatches: `, matrixMatches);
 				count = 0;
 			} else {
 				count = 0;
@@ -379,16 +351,11 @@ const pickRandomBlock = (x, blocks) => {
 		});
 
 		let pickedNum = Math.floor(Math.random() * matrixMatches.length);
-		//		console.log(`matrixMatches[pickedNum]:`, matrixMatches[pickedNum]);
-
 		return matrixMatches[pickedNum];
 	}
 	function createStroopWafels(block, x) {
-		console.log(`createStroop block:`,block);
 		let name1 = block.blockName;
-		console.log(block.blockName);
 		let type = name1.toLowerCase();
-		console.log(type);
 		let positions;
 		let j = -3
 		;
@@ -542,13 +509,11 @@ const pickRandomBlock = (x, blocks) => {
 			default:
 				console.log(`Not block found`);
 		}
-		console.log(`Positions: `, positions);
 		return positions;
 	}
 	
 	newBlock = pickBlock(x, blocks, blocks1);
 	newBlock.positions = createStroopWafels(newBlock, x);
-	console.log(newBlock.positions);
 	return newBlock;
 };
 
