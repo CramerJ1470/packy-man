@@ -357,7 +357,7 @@ const pickRandomBlock = (x, blocks) => {
 		let name1 = block.blockName;
 		let type = name1.toLowerCase();
 		let positions;
-		let j = -3;
+		let j = -3.5;
 		const a = {
 			x: j + (x % 11) * 10 - 2.5,
 			y: Math.floor(x / 12) * 10,
@@ -393,116 +393,116 @@ const pickRandomBlock = (x, blocks) => {
 		switch (type) {
 			case "bott":
 				positions = {
-					horiz: [b, d],
-					vert: [f, h],
+					horiz: {b:b, d:d},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "ltc":
 				positions = {
-					horiz: [b, d],
-					vert: [f, h],
+					horiz: {b:b, d:d},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "fw":
 				positions = {
-					horiz: [b, d],
-					vert: [f, h],
+					horiz: {b:b, d:d},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "lbc":
 				positions = {
-					horiz: [b, d],
-					vert: [f],
+					horiz: {b:b, d:d},
+					vert: {f:f},
 				};
 				break;
 			case "blocksv":
 				positions = {
-					horiz: [],
-					vert: [f, h],
+					horiz: {},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "blocksh":
 				positions = {
-					horiz: [b, d],
-					vert: [],
+					horiz: {b:b, d:d},
+					vert: {},
 				};
 				break;
 			case "empty":
 				positions = {
-					horiz: [],
-					vert: [],
+					horiz: {},
+					vert: {},
 				};
 				break;
 			case "rbc":
 				positions = {
-					horiz: [b],
-					vert: [f],
+					horiz: {b:b},
+					vert: {f:f},
 				};
 				break;
 			case "rtc":
 				positions = {
-					horiz: [b],
-					vert: [f, h],
+					horiz: {b:b},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "topt":
 				positions = {
-					horiz: [b, d],
-					vert: [f],
+					horiz: {b:b, d:d},
+					vert: {f:f},
 				};
 				break;
 			case "leftt":
 				positions = {
-					horiz: [b, d],
-					vert: [f, h],
+					horiz: {b:b, d:d},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "rightt":
 				positions = {
-					horiz: [b],
-					vert: [f, h],
+					horiz: {b:b},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "topde":
 				positions = {
-					horiz: [b],
-					vert: [f],
+					horiz: {b:b},
+					vert: {f:f},
 				};
 				break;
 			case "rightde":
 				positions = {
-					horiz: [b],
-					vert: [f],
+					horiz: {b:b},
+					vert: {f:f},
 				};
 				break;
 			case "bottde":
 				positions = {
-					horiz: [b],
-					vert: [f, h],
+					horiz: {b:b},
+					vert: {f:f, h:h},
 				};
 				break;
 			case "leftde":
 				positions = {
-					horiz: [b, d],
-					vert: [f],
+					horiz: {b:b, d:d},
+					vert: {f:f},
 				};
 				break;
 			case "horizbord":
 				positions = {
-					horiz: [],
-					vert: [],
+					horiz: {},
+					vert: {},
 				};
 				break;
 			case "vertbord":
 				positions = {
-					horiz: [],
-					vert: [],
+					horiz: {},
+					vert: {},
 				};
 				break;
 			case "cornbord":
 				positions = {
-					horiz: [],
-					vert: [],
+					horiz: {},
+					vert: {},
 				};
 				break;
 			default:

@@ -1,29 +1,20 @@
-import makePillBtn from "./makePillBtn";
+
 
 function getPillLocations(block, x) {
 	let pillLocs = block.positions;
-  
-	let blockName = block.blockName;
-   
-    let stroopwafels = [];
-	for (let i = 0; i < pillLocs.horiz.length; i++) {
+	console.log(pillLocs.horiz);
 
-		let bx = pillLocs.horiz[i].x;
-     
-		let by = pillLocs.horiz[i].y;
-   
-		let newWafel = makePillBtn(bx, by, blockName, x);
-     
-        stroopwafels.push(newWafel);
-	}
-	for (let k = 0; k < pillLocs.vert.length; k++) {
-		let bx = pillLocs.vert[k].x;
+	let blockName = block.blockName;
+
+	let stroopwafels = [];
 	
-		let by = pillLocs.vert[k].y;
-		let newWafel = makePillBtn(bx, by);
-       
-        stroopwafels.push(newWafel);
-	}
-    return stroopwafels;
+	let horizEls = Object.entries(pillLocs.horiz);
+	horizEls.forEach((location) => {let key = location[0]; console.log('key: ',key); let wafel = {}; wafel.type=key; wafel.location=location[1]; console.log(`new wafel: `,wafel); stroopwafels.push(wafel);});
+
+	let vertEls = Object.entries(pillLocs.vert);
+	vertEls.forEach((location) => {let key = location[0]; console.log('key: ',key); let wafel = {}; wafel.type=key;wafel.location = location[1]; console.log(`new wafel: `,wafel); stroopwafels.push(wafel);});
+
+	console.log(stroopwafels);
+	return stroopwafels;
 }
 export default getPillLocations;
