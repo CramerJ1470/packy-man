@@ -3,7 +3,7 @@ import "../index.css";
 import Wafel from "./Wafel";
 
 const StroopWafels = ( {stroopWafels}) => {
-console.log(`stroop wafels: `,stroopWafels);
+
 
 	 return (
 		<>

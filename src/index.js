@@ -1,9 +1,11 @@
-import React from 'react';
+import React , {useEffect, useRef} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './script.js';
+import './keyPress.js';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

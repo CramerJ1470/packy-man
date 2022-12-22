@@ -6,6 +6,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: transparent;
+	display: flex;
+	flex-direction: column;
 }
 
 code {
@@ -37,7 +39,6 @@ code {
 	height: 10rem;
 	position: relative;
 	text-align: center;
-	 
 }
 
 .blockcorn {
@@ -46,7 +47,7 @@ code {
 	width: 2rem;
 	height: 2rem;
 	position: relative;
-	
+
 	text-align: center;
 }
 
@@ -110,7 +111,8 @@ code {
 	width: 100rem;
 	height: 70rem;
 	margin: 0.5rem;
-	display: inline-block;
+	display: flex;
+	flex-direction: both;
 	background-color: darkblue;
 	position: relative;
 }
@@ -494,25 +496,47 @@ i {
 }
 
 .fa-cookie-bite {
-    color: white;
-  }
-  
-  .fa-cookie-bite:hover {
-    color: red;
-  }
-  
-  .fa-stroopwafel {
-    color: white;
+	color: white;
+}
+
+.fa-cookie-bite:hover {
+	color: red;
+}
+
+.fa-stroopwafel {
+	color: white;
 	width: 0.5rem;
 	height: 0.5rem;
-	position:absolute;
+	position: fixed;
 	z-index: 1;
-	
-	
-  }
-  
-  .fa-stroopwafel:hover {
-    color: blue;
-  }  
+	display: flex;
+}
 
-  
+.fa-stroopwafel:hover {
+	color: blue;
+}
+
+.packy {
+	width: 4.5rem;
+	height: 4.5rem;
+	z-index: 2;
+	left: 44.5rem;
+	top: 24.75rem;
+	background: url(./characters/rightOpenTransparent.png);
+	background-size: 4.5rem 4.5rem;
+	position: absolute;
+	transform: translatey() ease 1s;
+}
+
+
+
+.packy.closedmouth.right {
+	width: 4.5rem;
+	height: 4.5rem;
+	z-index: 2;
+	left: 44.5rem;
+	top: 24.75rem;
+	background: url(./characters/rightClosed.png);
+	background-size: 4.5rem 4.5rem;
+	position: absolute;
+}
