@@ -164,8 +164,10 @@ const pickRandomBlock = (x, blocks) => {
 				return properties;
 			})();
 			this.type = this.blockName.toLowerCase();
-			this.y = Math.floor(Math.round() * (x % 11));
+			this.yCenter = -3.5 + Math.floor(x / 11)*10;
+			this.xCenter = -3.5 + (x % 11) * 10;
 			this.x = x;
+			
 		}
 	}
 

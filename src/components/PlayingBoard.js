@@ -7,6 +7,7 @@ import pickRandomBlock from "../checkBlocks/pickRandomBlock";
 import Row from "./Row";
 import { useRef, useEffect } from "react";
 
+
 const PlayingBoard = () => {
 	function useKey(key, cb) {
 		const callbackRef = useRef(cb);
@@ -116,6 +117,8 @@ const PlayingBoard = () => {
 			newRow.push(blocks[u]);
 		}
 	}
+
+	//console.log(JSON.stringify(blocks));
 
 	return (
 		<>

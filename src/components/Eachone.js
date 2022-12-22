@@ -71,7 +71,7 @@ const Eachone = ({block,index}) => {
 	let code = { html: newComp }; //sets a variable to the component 
 
 	let codeHTML = code.html(); //sets a variable to running the Component;
-	
+	console.log(block);
 	let stroopWafels = getPillLocations(block, block.x);
 	
 // Render the component //

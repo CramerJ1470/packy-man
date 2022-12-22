@@ -19,12 +19,9 @@ import FullTop from "./components/FullTop";
 import Empty from "./components/Empty";
 import { createElement } from "react";
 import PlayingBoard from "./components/PlayingBoard";
-import { useRef, useEffect } from "react";
-
-
+import { useRef, useEffect, useState } from "react";
 
 function App() {
-	
 	return (
 		<>
 			<div className="App">

@@ -2,6 +2,7 @@ import React from "react";
 import "../index.css";
 
 const Wafel = ({ wafel }) => {
+	
 	let id = `${wafel.type}${wafel.location.x}${wafel.location.y}`;
 	
 	return (
