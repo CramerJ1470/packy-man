@@ -26,25 +26,64 @@ const PlayingBoard = () => {
 		}, [key]);
 	}
 
+	let packyman = document.getElementById("packy");
+
 	function handleUp() {
-		let packyman = document.getElementById("packy").offsetTop;
+		document.getElementById("packy").setAttribute("class", "packy");
+		let packyman = document.getElementById("packy");
+		document.getElementById("packy").classList.add("up", "open");
 		document.getElementById("packy").style.top =
-			(packyman / 16 - 0.3).toString() + "rem";
+			(packyman.offsetTop / 16 - 0.25).toString() + "rem";
+		times++;
+		if (times % 4 === 0) {
+			document.getElementById("packy").classList.add("closed");
+		} else {
+			document.getElementById("packy").classList.remove("closed");
+			document.getElementById("packy").classList.add("open");
+		}
 	}
 	function handleDown() {
-		let packyman = document.getElementById("packy").offsetTop;
+		document.getElementById("packy").setAttribute("class", "packy");
+		let packyman = document.getElementById("packy");
+		document.getElementById("packy").classList.add("down", "open");
 		document.getElementById("packy").style.top =
-			(packyman / 16 + 0.3).toString() + "rem";
+			(packyman.offsetTop / 16 + 0.25).toString() + "rem";
+		times++;
+		if (times % 4 === 0) {
+			document.getElementById("packy").classList.add("closed");
+		} else {
+			document.getElementById("packy").classList.remove("closed");
+			document.getElementById("packy").classList.add("open");
+		}
 	}
 	function handleLeft() {
-		let packyman = document.getElementById("packy").offsetLeft;
+		document.getElementById("packy").setAttribute("class", "packy");
+		let packyman = document.getElementById("packy");
+		document.getElementById("packy").classList.add("left", "open");
 		document.getElementById("packy").style.left =
-			(packyman / 16 - 0.3).toString() + "rem";
+			(packyman.offsetLeft / 16 - 0.25).toString() + "rem";
+		times++;
+		if (times % 4 === 0) {
+			document.getElementById("packy").classList.add("closed");
+		} else {
+			document.getElementById("packy").classList.remove("closed");
+			document.getElementById("packy").classList.add("open");
+		}
 	}
+	let times = 1;
 	function handleRight() {
-		let packyman = document.getElementById("packy").offsetLeft;
+		document.getElementById("packy").setAttribute("class", "packy");
+		let packyman = document.getElementById("packy");
+		document.getElementById("packy").classList.add("right", "open");
 		document.getElementById("packy").style.left =
-			(packyman / 16 + 0.3).toString() + "rem";
+			(packyman.offsetLeft / 16 + 0.25).toString() + "rem";
+		times++;
+		if (times % 4 === 0) {
+			document.getElementById("packy").classList.add("right", "closed");
+		} else {
+			document.getElementById("packy").classList.remove("closed");
+			document.getElementById("packy").classList.add("open");
+		}
 	}
 
 	useKey("Numpad4", handleLeft);
@@ -80,9 +119,7 @@ const PlayingBoard = () => {
 
 	return (
 		<>
-			<div id="packy" className="packy openmouth">
-				here
-			</div>
+			<div id="packy" className="packy openmouth"></div>
 			{rows.map((row, index) => {
 				return <Row index={index} row={row} />;
 			})}

@@ -520,23 +520,51 @@ i {
 	width: 4.5rem;
 	height: 4.5rem;
 	z-index: 2;
-	left: 44.5rem;
-	top: 24.75rem;
-	background: url(./characters/rightOpenTransparent.png);
+	left: calc(44.5*.825%);
+	top: calc(24.75*1.3%);
+	background-image: url(./characters/rightOpenTransparent.png);
 	background-size: 4.5rem 4.5rem;
 	position: absolute;
 	transform: translatey() ease 1s;
 }
+.packy.right.open {
+	
+	background-image: url(./characters/rightOpenTransparent.png);
+	
+}
 
 
+.packy.right.closed {
+	
+	background-image: url(./characters/rightClosed.png);
+	
+}
+.packy.down.open {
+	
+	background-image: url(./characters/downOpenTransparent.png);
+	
+}
+.packy.down.closed {
+	background-image: url(./characters/downClosedTransparent.png);
+}
+.packy.up.open {
+	
+	background-image: url(./characters/upOpenTransparent.png);
+	
+}
+.packy.up.closed {
+	
+	background-image: url(./characters/upClosedTransparent.png);
+	
+}
+.packy.left.open {
+	
+	background-image: url(./characters/leftOpenTransparent.png);
+	
+}
 
-.packy.closedmouth.right {
-	width: 4.5rem;
-	height: 4.5rem;
-	z-index: 2;
-	left: 44.5rem;
-	top: 24.75rem;
-	background: url(./characters/rightClosed.png);
-	background-size: 4.5rem 4.5rem;
-	position: absolute;
+.packy.left.closed {
+	
+	background-image: url(./characters/leftClosedTransparent.png);
+	
 }
