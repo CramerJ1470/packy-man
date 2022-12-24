@@ -23,12 +23,13 @@ import { useRef, useEffect, useState } from "react";
 
 function App() {
 	return (
-		<>
+		<> 
+		<div>
 			<div className="App">
 				<PlayingBoard />
 			</div>
-			<div style={{textAlign: "center" , fontWeight: "bold", color: "blue"}}>Use Numpad 4,8,6,2 (arrows) to move packyman</div>
-
+			
+		</div>
 		</>
 	);
 }

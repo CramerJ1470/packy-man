@@ -22,12 +22,14 @@ import VertBord from "./VertBord";
 import CornBord from "./CornBord";
 import StroopWafels from "./StroopWafels";
 import getPillLocations from "../checkBlocks/getPillLocations"; 
+import updateAllRows from "./PlayingBoard";
 
 
 let newComp;
-const Eachone = ({block,index}) => {
+const Eachone = ({block,index, newRow}) => {
 	let comp = block.blockName;   // blockName
-
+	
+	 
 	if (comp === "RBC") { //takes a string
 		newComp = RBC; //sets a variable to a component
 	} else if (comp === "FW") {
@@ -71,8 +73,9 @@ const Eachone = ({block,index}) => {
 	let code = { html: newComp }; //sets a variable to the component 
 
 	let codeHTML = code.html(); //sets a variable to running the Component;
-	console.log(block);
+	//console.log(block);
 	let stroopWafels = getPillLocations(block, block.x);
+	
 	
 // Render the component //
 	return (  

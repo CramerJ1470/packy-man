@@ -301,7 +301,7 @@ const pickRandomBlock = (x, blocks) => {
 				b: blocks[x - 11].properties.d,
 				d: "closed",
 			};
-			newBlock = matrixMatch(matrix, blocks1);
+			newBlock = matrixMatch(matrix, blocks1,x);
 		} else if (x > 66 && x < 76) {
 			newBlock = new Block("HorizBord", x);
 			

@@ -5,10 +5,13 @@ import React from "react";
 import "../index.css";
 import pickRandomBlock from "../checkBlocks/pickRandomBlock";
 import Row from "./Row";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+
 
 
 const PlayingBoard = () => {
+	
+
 	function useKey(key, cb) {
 		const callbackRef = useRef(cb);
 
@@ -26,6 +29,7 @@ const PlayingBoard = () => {
 			return () => document.removeEventListener("keypress", handle);
 		}, [key]);
 	}
+	//create hooks
 
 	let packyman = document.getElementById("packy");
 
@@ -99,7 +103,7 @@ const PlayingBoard = () => {
 		blocks.push(block);
 	}
 	let rows = [];
-	let newRow = [];
+	let newRow1 = [];
 	for (let u = 0; u < blocks.length; u++) {
 		if (
 			u === 10 ||
@@ -110,24 +114,25 @@ const PlayingBoard = () => {
 			u === 65 ||
 			u === 76
 		) {
-			newRow.push(blocks[u]);
-			rows.push(newRow);
-			newRow = [];
+			newRow1.push(blocks[u]);
+			rows.push(newRow1);
+			newRow1 = [];
 		} else {
-			newRow.push(blocks[u]);
+			newRow1.push(blocks[u]);
 		}
 	}
 
 	//console.log(JSON.stringify(blocks));
 
 	return (
-		<>
+		<>	<div style={{textAlign: "left" , fontWeight: "bold", color: "blue"}}>Use Numpad 4,8,6,2 (arrows) to move packyman</div>
 			<div id="packy" className="packy openmouth"></div>
 			{rows.map((row, index) => {
-				return <Row index={index} row={row} />;
+				return <Row row={row} blocks={blocks} index={index} />;
 			})}
+			
 		</>
 	);
 };
 
-export default PlayingBoard;
+export default PlayingBoard ;
