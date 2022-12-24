@@ -9,20 +9,20 @@ html {
 
 @media only screen and (min-width: 720px) {
 	html {
-		font-size: 12px;
+		font-size: 6px;
 	}
 }
 
 
 @media only screen and (min-width: 960px) {
 	html {
-		font-size: 13.33px;
+		font-size: 8px;
 	}
 }
 
 @media only screen and (min-width: 1240px) {
 	html {
-		font-size: 16px;
+		font-size: 10px;
 	}
 }
 
