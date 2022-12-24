@@ -125,11 +125,12 @@ const PlayingBoard = () => {
 	//console.log(JSON.stringify(blocks));
 
 	return (
-		<>	<div style={{textAlign: "left" , fontWeight: "bold", color: "blue"}}>Use Numpad 4,8,6,2 (arrows) to move packyman</div>
+		<>	
 			<div id="packy" className="packy openmouth"></div>
 			{rows.map((row, index) => {
 				return <Row row={row} blocks={blocks} index={index} />;
 			})}
+			<div style={{textAlign: "left" , fontWeight: "bold", color: "blue"}}>Use Numpad 4,8,6,2 (arrows) to move packyman</div>
 			
 		</>
 	);
