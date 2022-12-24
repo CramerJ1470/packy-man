@@ -205,6 +205,8 @@ const pickRandomBlock = (x, blocks) => {
 			newBlock = new Block("CornBord", x);
 		} else if (x > 0 && x < 10) {
 			newBlock = new Block("HorizBord", x);
+		} else if (x === 38 ) {
+				newBlock = new Block("FW", x);	
 		} else if (x % 11 === 0 && x !== 0 && x !== 66) {
 			newBlock = new Block("VertBord", x);
 		} else if ((x + 1) % 11 === 0) {
@@ -261,7 +263,26 @@ const pickRandomBlock = (x, blocks) => {
 					c: "closed",
 				};
 				newBlock = matrixMatch(matrix, blocks1, x);
-			} else {
+			} 
+			else if (x === 27){
+				matrix = {
+					a: blocks[x - 1].properties.c,
+					b: blocks[x - 11].properties.d,
+					//c: Math.random() < 0.5 ? "open" : "closed",
+					d: "open",
+				};
+				newBlock = matrixMatch(matrix, blocks1, x);
+			}else if (x === 37){
+				matrix = {
+					a: blocks[x - 1].properties.c,
+					b: blocks[x - 11].properties.d,
+					c: "open",
+					
+				};
+				newBlock = matrixMatch(matrix, blocks1, x);
+			}
+			
+			else {
 				matrix = {
 					a: blocks[x - 1].properties.c,
 					b: blocks[x - 11].properties.d,
