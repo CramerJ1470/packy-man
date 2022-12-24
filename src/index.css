@@ -3,20 +3,20 @@ html {
 }
 @media only screen and (min-width: 414px) {
 	html {
-		font-size: 4px;
+		font-size: 6px;
 	}
 }
 
 @media only screen and (min-width: 720px) {
 	html {
-		font-size: 6px;
+		font-size: 10px;
 	}
 }
 
 
 @media only screen and (min-width: 960px) {
 	html {
-		font-size: 8px;
+		font-size: 12px;
 	}
 }
 
