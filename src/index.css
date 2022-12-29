@@ -50,6 +50,8 @@ code {
 	height: 10rem;
 	position: relative;
 	text-align: center;
+	
+
 }
 
 .blockhoriz {
@@ -145,6 +147,7 @@ code {
 	position: relative;
 }
 
+
 .runway {
 	display: flex;
 	height: 3rem;
@@ -152,7 +155,7 @@ code {
 	top: 34%;
 	align-items: center;
 	left: 0;
-	overflow: hidden;
+
 }
 
 ul {
@@ -469,9 +472,7 @@ i {
 	left: 1.5rem;
 }
 
-.block {
-	overflow: hidden;
-}
+
 
 .row {
 	display: flex;
@@ -535,8 +536,8 @@ i {
 	color: white;
 	width: 0.5rem;
 	height: 0.5rem;
-	position: fixed;
-	z-index: 1;
+	position: absolute;
+	z-index: 2;
 	display: flex;
 }
 
@@ -547,7 +548,7 @@ i {
 .packy {
 	width: 4.5rem;
 	height: 4.5rem;
-	z-index: 2;
+	z-index: 3;
 	left: 44.5rem;
 	top: 24.75rem;
 	background-image: url(./characters/rightOpenTransparent.png);

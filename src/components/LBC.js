@@ -4,7 +4,7 @@ import LBIC from "./LBIC";
 import SBS from "./SBS";
 import SLS from "./SLS";
 import RTOC from "./RTOC";
-import FullBottom from "./FullBottom";
+import StroopWafels from "./StroopWafels";
 
 const LBC = () => {
 	return (
@@ -14,7 +14,9 @@ const LBC = () => {
 				<LBIC />
 				<SBS />
 				<RTOC />
+				<StroopWafels block={"LBC"}/>
 			</div>
+			
 		</>
 	);
 };

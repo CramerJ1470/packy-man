@@ -3,7 +3,7 @@
 // https://github.com/CramerJ1470/packy-man.git
 import React from "react";
 import "../index.css";
-import pickRandomBlock from "../checkBlocks/pickRandomBlock";
+import {pickRandomBlock} from "../checkBlocks/pickRandomBlock";
 import Row from "./Row";
 import { useRef, useEffect, useState } from "react";
 

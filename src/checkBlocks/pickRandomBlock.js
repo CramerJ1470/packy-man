@@ -164,10 +164,9 @@ const pickRandomBlock = (x, blocks) => {
 				return properties;
 			})();
 			this.type = this.blockName.toLowerCase();
-			this.yCenter = -3.5 + Math.floor(x / 11)*10;
+			this.yCenter = -3.5 + Math.floor(x / 11) * 10;
 			this.xCenter = -3.5 + (x % 11) * 10;
 			this.x = x;
-			
 		}
 	}
 
@@ -205,8 +204,8 @@ const pickRandomBlock = (x, blocks) => {
 			newBlock = new Block("CornBord", x);
 		} else if (x > 0 && x < 10) {
 			newBlock = new Block("HorizBord", x);
-		} else if (x === 38 ) {
-				newBlock = new Block("FW", x);	
+		} else if (x === 38) {
+			newBlock = new Block("FW", x);
 		} else if (x % 11 === 0 && x !== 0 && x !== 66) {
 			newBlock = new Block("VertBord", x);
 		} else if ((x + 1) % 11 === 0) {
@@ -263,8 +262,7 @@ const pickRandomBlock = (x, blocks) => {
 					c: "closed",
 				};
 				newBlock = matrixMatch(matrix, blocks1, x);
-			} 
-			else if (x === 27){
+			} else if (x === 27) {
 				matrix = {
 					a: blocks[x - 1].properties.c,
 					b: blocks[x - 11].properties.d,
@@ -272,17 +270,14 @@ const pickRandomBlock = (x, blocks) => {
 					d: "open",
 				};
 				newBlock = matrixMatch(matrix, blocks1, x);
-			}else if (x === 37){
+			} else if (x === 37) {
 				matrix = {
 					a: blocks[x - 1].properties.c,
 					b: blocks[x - 11].properties.d,
 					c: "open",
-					
 				};
 				newBlock = matrixMatch(matrix, blocks1, x);
-			}
-			
-			else {
+			} else {
 				matrix = {
 					a: blocks[x - 1].properties.c,
 					b: blocks[x - 11].properties.d,
@@ -322,10 +317,9 @@ const pickRandomBlock = (x, blocks) => {
 				b: blocks[x - 11].properties.d,
 				d: "closed",
 			};
-			newBlock = matrixMatch(matrix, blocks1,x);
+			newBlock = matrixMatch(matrix, blocks1, x);
 		} else if (x > 66 && x < 76) {
 			newBlock = new Block("HorizBord", x);
-			
 		}
 		return newBlock;
 	}
@@ -376,167 +370,150 @@ const pickRandomBlock = (x, blocks) => {
 		let pickedNum = Math.floor(Math.random() * matrixMatches.length);
 		return matrixMatches[pickedNum];
 	}
-	function createStroopWafels(block, x) {
-		let name1 = block.blockName;
-		let type = name1.toLowerCase();
-		let positions;
-		let j = -3.5;
-		const a = {
-			x: j + (x % 11) * 10 - 2.5,
-			y: Math.floor(x / 12) * 10,
-		}; //%12 %11
-		const b = {
-			x: j + (x % 11) * 10,
-			y: j + Math.floor(x / 11) * 10,
-		};
-		const c = {
-			x: j + (x % 11) * 10 + 2.5,
-			y: j + Math.floor(x / 12) * 10,
-		};
-		const d = {
-			x: j + (x % 11) * 10 + 5.0,
-			y: j + Math.floor(x / 11) * 10,
-		};
-		const e = {
-			x: j + Math.floor(x / 11) * 10,
-			y: j + Math.floor(x / 11) * 10 - 2.5,
-		};
-		const f = {
-			x: j + (x % 11) * 10,
-			y: j + Math.floor(x / 11) * 10,
-		};
-		const g = {
-			x: j + Math.floor(x / 11) * 10,
-			y: j + Math.floor(x / 11) * 10 + 2.5,
-		};
-		const h = {
-			x: j + (x % 11) * 10,
-			y: j + Math.floor(x / 11) * 10 + 5,
-		};
-		switch (type) {
-			case "bott":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "ltc":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "fw":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "lbc":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f},
-				};
-				break;
-			case "blocksv":
-				positions = {
-					horiz: {},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "blocksh":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {},
-				};
-				break;
-			case "empty":
-				positions = {
-					horiz: {},
-					vert: {},
-				};
-				break;
-			case "rbc":
-				positions = {
-					horiz: {b:b},
-					vert: {f:f},
-				};
-				break;
-			case "rtc":
-				positions = {
-					horiz: {b:b},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "topt":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f},
-				};
-				break;
-			case "leftt":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "rightt":
-				positions = {
-					horiz: {b:b},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "topde":
-				positions = {
-					horiz: {b:b},
-					vert: {f:f},
-				};
-				break;
-			case "rightde":
-				positions = {
-					horiz: {b:b},
-					vert: {f:f},
-				};
-				break;
-			case "bottde":
-				positions = {
-					horiz: {b:b},
-					vert: {f:f, h:h},
-				};
-				break;
-			case "leftde":
-				positions = {
-					horiz: {b:b, d:d},
-					vert: {f:f},
-				};
-				break;
-			case "horizbord":
-				positions = {
-					horiz: {},
-					vert: {},
-				};
-				break;
-			case "vertbord":
-				positions = {
-					horiz: {},
-					vert: {},
-				};
-				break;
-			case "cornbord":
-				positions = {
-					horiz: {},
-					vert: {},
-				};
-				break;
-			default:
-				console.log(`Not block found`);
-		}
-		return positions;
-	}
 
 	newBlock = pickBlock(x, blocks, blocks1);
-	newBlock.positions = createStroopWafels(newBlock, x);
 	return newBlock;
 };
+function createStroopWafels(block) {
+	console.log(`create: `, block);
+	let type = block.block.toLowerCase();
+	console.log(`type: `, type);
+	let positions;
+	const b = {
+		x: "4.5rem",
+		y: "4.5rem",
+	};
+	const d = {
+		x: "9.5rem",
+		y: "4.5rem",
+	};
+	const f = {
+		x: "4.5rem",
+		y: "4.5rem",
+	};
+	const h = {
+		x: "4.5rem",
+		y: "9.5rem",
+	};
+	switch (type) {
+		case "bott":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "ltc":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "fw":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "lbc":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f },
+			};
+			break;
+		case "blocksv":
+			positions = {
+				horiz: {},
+				vert: { f: f, h: h },
+			};
+			break;
+		case "blocksh":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: {},
+			};
+			break;
+		case "empty":
+			positions = {
+				horiz: {},
+				vert: {},
+			};
+			break;
+		case "rbc":
+			positions = {
+				horiz: { b: b },
+				vert: { f: f },
+			};
+			break;
+		case "rtc":
+			positions = {
+				horiz: { b: b },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "topt":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f },
+			};
+			break;
+		case "leftt":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "rightt":
+			positions = {
+				horiz: { b: b },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "topde":
+			positions = {
+				horiz: { b: b },
+				vert: { f: f },
+			};
+			break;
+		case "rightde":
+			positions = {
+				horiz: { b: b },
+				vert: { f: f },
+			};
+			break;
+		case "bottde":
+			positions = {
+				horiz: { b: b },
+				vert: { f: f, h: h },
+			};
+			break;
+		case "leftde":
+			positions = {
+				horiz: { b: b, d: d },
+				vert: { f: f },
+			};
+			break;
+		case "horizbord":
+			positions = {
+				horiz: {},
+				vert: {},
+			};
+			break;
+		case "vertbord":
+			positions = {
+				horiz: {},
+				vert: {},
+			};
+			break;
+		case "cornbord":
+			positions = {
+				horiz: {},
+				vert: {},
+			};
+			break;
+		default:
+			console.log(`Not block found`);
+	}
+	return positions;
+}
 
-export default pickRandomBlock;
+export { pickRandomBlock, createStroopWafels };

@@ -3,11 +3,11 @@ import "../index.css";
 
 const Wafel = ({ wafel }) => {
 	
-	let id = `${wafel.type}${wafel.location.x}${wafel.location.y}`;
+	let id = wafel.x+wafel.y;
 	
 	return (
 		 
-			<i style={{"top": `${wafel.location.y}rem`, "left":`${wafel.location.x}rem`}} id={{id}} className="fa-solid fa-stroopwafel"></i>
+			<i style={{"top": wafel.y, "left":wafel.x}} id={{id}} className="fa-solid fa-stroopwafel"></i>
 		 
 	);
     

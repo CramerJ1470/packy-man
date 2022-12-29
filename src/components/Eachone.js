@@ -20,17 +20,13 @@ import RightDE from "./RightDE";
 import HorizBord from "./HorizBord";
 import VertBord from "./VertBord";
 import CornBord from "./CornBord";
-import StroopWafels from "./StroopWafels";
-import getPillLocations from "../checkBlocks/getPillLocations"; 
-import updateAllRows from "./PlayingBoard";
-
 
 let newComp;
-const Eachone = ({block,index, newRow}) => {
-	let comp = block.blockName;   // blockName
-	
-	 
-	if (comp === "RBC") { //takes a string
+const Eachone = ({ block, index, newRow }) => {
+	let comp = block.blockName; // blockName
+
+	if (comp === "RBC") {
+		//takes a string
 		newComp = RBC; //sets a variable to a component
 	} else if (comp === "FW") {
 		newComp = FW;
@@ -52,38 +48,29 @@ const Eachone = ({block,index, newRow}) => {
 		newComp = BotT;
 	} else if (comp === "LeftT") {
 		newComp = LeftT;
-	} else if (comp === "RightT") {  
+	} else if (comp === "RightT") {
 		newComp = RightT;
-	} else if (comp === "RightDE") {  
+	} else if (comp === "RightDE") {
 		newComp = RightDE;
-	} else if (comp === "LeftDE") {  
+	} else if (comp === "LeftDE") {
 		newComp = LeftDE;
-	} else if (comp === "TopDE") {  
+	} else if (comp === "TopDE") {
 		newComp = TopDE;
-	} else if (comp === "BottDE") {  
+	} else if (comp === "BottDE") {
 		newComp = BottDE;
-	}  else if (comp === "HorizBord") {  
+	} else if (comp === "HorizBord") {
 		newComp = HorizBord;
-	} else if (comp === "VertBord") {  
+	} else if (comp === "VertBord") {
 		newComp = VertBord;
-	} else if (comp === "CornBord") {  
+	} else if (comp === "CornBord") {
 		newComp = CornBord;
-	} 
+	}
 
-	let code = { html: newComp }; //sets a variable to the component 
+	let code = { html: newComp }; //sets a variable to the component
 
 	let codeHTML = code.html(); //sets a variable to running the Component;
-	//console.log(block);
-	let stroopWafels = getPillLocations(block, block.x);
-	
-	
-// Render the component //
-	return (  
-		<>
-				{codeHTML}
-				<StroopWafels stroopWafels={stroopWafels} />
-		</>		
-	)
+
+	// Render the component //
+	return <>{codeHTML}</>;
 };
 export default Eachone;
-// line 79 <StroopWafels stroopWafels={stroopWafels} />

@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
-
 import LeftT from "./LeftT";
+import StroopWafels from "./StroopWafels";
 
 
 const RightT = () => {
@@ -11,7 +11,9 @@ const RightT = () => {
 				
 				<div className="rot180 ">
 					<LeftT/>
+					
 				</div>
+				<StroopWafels block={"RightT"}/>
 			</div>
 		</>
 	);

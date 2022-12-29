@@ -1,7 +1,6 @@
 import React from "react";
 import "../index.css";
-import BlockSH from "./BlockSH";
-import TopDE from "./TopDE";
+import StroopWafels from "./StroopWafels";
 
 const RightDE = () => {
 	return (
@@ -13,6 +12,7 @@ const RightDE = () => {
 				<div className="line line2 top2 "></div>
 				<div className="line line1 top2 dropBottom"></div>
 				<div className="line line1 top2 dropBottom rot180 "></div>
+				<StroopWafels block={"RightDE"}/>
 			</div>
 		</>
 	);

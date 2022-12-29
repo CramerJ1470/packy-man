@@ -1,7 +1,5 @@
 import React from "react";
 import "../index.css";
-import FullTop from "./FullTop";
-
 
 const FullBottom = () => {
 	return (
