@@ -1,18 +1,17 @@
 import React from "react";
 import "../index.css";
 import FullBottom from "./FullBottom";
+import FullTop from "./FullTop";
 import StroopWafels from "./StroopWafels";
-
-
 
 const BlockSH = () => {
 	return (
 		<>
-			<div id="a1" className="block">
-				<div className="line line1 fulltop"></div>
-				<div className="line line2 fulltop"></div>
+			<div id="a1" className="block ">
+
+				<FullTop/>
 				<FullBottom />
-				<StroopWafels block={"BlockSH"}/>
+				<StroopWafels block={"BlockSH"} />
 			</div>
 		</>
 	);

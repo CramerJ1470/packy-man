@@ -13,7 +13,6 @@ html {
 	}
 }
 
-
 @media only screen and (min-width: 960px) {
 	html {
 		font-size: 12px;
@@ -50,8 +49,6 @@ code {
 	height: 10rem;
 	position: relative;
 	text-align: center;
-	
-
 }
 
 .blockhoriz {
@@ -147,7 +144,6 @@ code {
 	position: relative;
 }
 
-
 .runway {
 	display: flex;
 	height: 3rem;
@@ -155,7 +151,6 @@ code {
 	top: 34%;
 	align-items: center;
 	left: 0;
-
 }
 
 ul {
@@ -357,6 +352,10 @@ i {
 	width: 7.5rem;
 }
 
+.rotminus90 {
+	transform: rotate(-90deg);
+}
+
 .rtn {
 	transform: translateY(7.5rem);
 }
@@ -472,8 +471,6 @@ i {
 	left: 1.5rem;
 }
 
-
-
 .row {
 	display: flex;
 }
@@ -537,8 +534,9 @@ i {
 	width: 0.5rem;
 	height: 0.5rem;
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	display: flex;
+	
 }
 
 .fa-stroopwafel:hover {

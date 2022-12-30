@@ -7,7 +7,8 @@ const TopDE = () => {
 	return (
 		<div id="a1" className="block rot90">
 			<RightDE />
-			<StroopWafels block={"TopDE"}/>
+
+			<StroopWafels block={"TopDE"} />
 		</div>
 	);
 };
