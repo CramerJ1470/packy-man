@@ -528,15 +528,13 @@ i {
 .fa-cookie-bite:hover {
 	color: red;
 }
-
 .fa-stroopwafel {
 	color: white;
 	width: 0.5rem;
 	height: 0.5rem;
 	position: absolute;
-	z-index: 3;
+	z-index: 1;
 	display: flex;
-	
 }
 
 .fa-stroopwafel:hover {
@@ -553,6 +551,7 @@ i {
 	background-size: 4.5rem 4.5rem;
 	position: absolute;
 }
+
 .packy.right.open {
 	background-image: url(./characters/rightOpenTransparent.png);
 }
@@ -560,18 +559,23 @@ i {
 .packy.right.closed {
 	background-image: url(./characters/rightClosed.png);
 }
+
 .packy.down.open {
 	background-image: url(./characters/downOpenTransparent.png);
 }
+
 .packy.down.closed {
 	background-image: url(./characters/downClosedTransparent.png);
 }
+
 .packy.up.open {
 	background-image: url(./characters/upOpenTransparent.png);
 }
+
 .packy.up.closed {
 	background-image: url(./characters/upClosedTransparent.png);
 }
+
 .packy.left.open {
 	background-image: url(./characters/leftOpenTransparent.png);
 }
