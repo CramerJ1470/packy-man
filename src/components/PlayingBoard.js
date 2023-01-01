@@ -3,15 +3,11 @@
 // https://github.com/CramerJ1470/packy-man.git
 import React from "react";
 import "../index.css";
-import {pickRandomBlock} from "../checkBlocks/pickRandomBlock";
+import { pickRandomBlock } from "../checkBlocks/pickRandomBlock";
 import Row from "./Row";
 import { useRef, useEffect, useState } from "react";
 
-
-
 const PlayingBoard = () => {
-	
-
 	function useKey(key, cb) {
 		const callbackRef = useRef(cb);
 
@@ -122,18 +118,118 @@ const PlayingBoard = () => {
 		}
 	}
 
+	let newColumn = [];
+	let columnsToKeep = [];
+	let colStart;
+	let colEnd;
+
+	for (let cl = 12; cl < 21; cl++) {
+		// starting Block
+		for (let nextCol = cl; nextCol < cl + 45; nextCol = nextCol + 11) {
+			//*********************
+			let currentBlock = blocks[nextCol];
+			//console.log(`currentBlock:`,currentBlock);
+			if (
+				blocks[nextCol - 11].properties.d === "closed" &&
+				currentBlock.properties.d === "open"
+			) {
+				colStart = currentBlock.yCenter;
+			} else if (
+				blocks[nextCol - 11].properties.d === "open" &&
+				currentBlock.properties.d === "closed"
+			) {
+				colEnd = currentBlock.yCenter; //sets offsetLeft
+				let z = currentBlock.xCenter; //sets offsetTop
+
+				//*************look for matching y then just push x
+
+				newColumn.push({ x: z, y: [{ start: colStart, end: colEnd }] });
+			}
+			//console.log(`newColumn: cl:`,newColumn);
+		}
+		if (newColumn.length !== 0) {
+			columnsToKeep.push(newColumn);
+			newColumn = [];
+		}
+	}
+	console.log(`columnsToKeep:`, columnsToKeep);
+	//**********Create data that will be used by characters for moving based on the game board************/
+
+	// *****************on a given Y the start-end of each row path  **********************
+	//console.log(`rows: `, rows);
+	let rowsToKeep = [];
+	let allRows = [];
+	for (let xx = 1; xx < rows.length - 1; xx++) {
+		let row = rows[xx];
+		let newRow = [];
+		let end;
+
+		let start;
+
+		for (let ay = 0; ay < row.length; ay++) {
+			let currentBlock = blocks[xx * 11 + ay];
+
+			if (
+				[
+					"CornBord",
+					"vertBord",
+					"HorizBord",
+					"TopDE",
+					"BottDE",
+					"Empty",
+				].includes(currentBlock.blockName) === false
+			) {
+				if (currentBlock.x > 0) {
+					if (
+						blocks[currentBlock.x - 1].properties.c === "closed" &&
+						currentBlock.properties.c === "open"
+					) {
+						start = currentBlock.xCenter;
+					} else if (
+						blocks[currentBlock.x - 1].properties.c === "open" &&
+						currentBlock.properties.c === "closed"
+					) {
+						end = currentBlock.xCenter; //sets offsetLeft
+						let z = currentBlock.yCenter; //sets offsetTop
+						//*************look for matching y then just push x
+						newRow.push({ y: z, x: [{ start: start, end: end }] });
+					} else if (
+						blocks[currentBlock.x - 1].properties.c === "closed" &&
+						currentBlock.properties.c === "open"
+					) {
+						start = currentBlock.xCenter;
+					}
+				}
+				if (newRow.length > 0) {
+					allRows.push(newRow);
+					newRow = [];
+				}
+			}
+		}
+		rowsToKeep.push(allRows);
+	}
+	console.log(rowsToKeep);
+	//for (let ind = 0; ind < allRows.length; ind++) {
+	//	if (ind % 2 === 0) {
+
+	//	}
+	//}
+
 	//console.log(JSON.stringify(blocks));
 
 	return (
-		<>	
+		<>
 			<div id="packy" className="packy openmouth"></div>
 			{rows.map((row, index) => {
 				return <Row row={row} blocks={blocks} index={index} />;
 			})}
-			<div style={{textAlign: "left" , fontWeight: "bold", color: "blue"}}>Use Numpad 4,8,6,2 (arrows) to move packyman</div>
-			
+			<div
+				style={{ textAlign: "left", fontWeight: "bold", color: "blue" }}
+			>
+				Use Numpad 4,8,6,2 (arrows) to move packyman
+			</div>
 		</>
 	);
 };
 
-export default PlayingBoard ;
+export default PlayingBoard;

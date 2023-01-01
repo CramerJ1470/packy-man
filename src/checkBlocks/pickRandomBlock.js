@@ -375,9 +375,7 @@ const pickRandomBlock = (x, blocks) => {
 	return newBlock;
 };
 function createStroopWafels(block) {
-	console.log(`create: `, block);
 	let type = block.block.toLowerCase();
-	console.log(`type: `, type);
 	let positions;
 	const b = {
 		x: "4.5rem",

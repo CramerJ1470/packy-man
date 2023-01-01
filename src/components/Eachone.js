@@ -22,7 +22,7 @@ import VertBord from "./VertBord";
 import CornBord from "./CornBord";
 
 let newComp;
-const Eachone = ({ block, index, newRow }) => {
+const Eachone = ({ block, index, newRow}) => {
 	let comp = block.blockName; // blockName
 
 	if (comp === "RBC") {
