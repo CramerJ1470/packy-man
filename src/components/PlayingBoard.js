@@ -73,7 +73,7 @@ const PlayingBoard = () => {
 			yList = [];
 		}
 	}
-	console.log(`columnsToKeep:`, JSON.stringify(columnsToKeep));
+	//console.log(`columnsToKeep:`, JSON.stringify(columnsToKeep));
 	//**********Create data that will be used by characters for moving based on the game board************/
 
 	// *****************on a given Y the start-end of each row path  **********************
@@ -129,7 +129,7 @@ const PlayingBoard = () => {
 			newRow = [];
 		}
 	}
-	console.log(`rowsToKeep:`, JSON.stringify(rowsToKeep));
+	//console.log(`rowsToKeep:`, JSON.stringify(rowsToKeep));
 	//for (let ind = 0; ind < allRows.length; ind++) {
 	//	if (ind % 2 === 0) {
 
@@ -140,9 +140,9 @@ const PlayingBoard = () => {
 	rowsToKeep.forEach((row) => {
 		if (row.y === yCheck) {
 			let ans = row.x;
-			console.log(`ans: `, ans);
+			//console.log(`ans: `, ans);
 			ans.forEach((item) => {
-				console.log(`success: yCheck:${yCheck}===${item}`);
+				//console.log(`success: yCheck:${yCheck}===${item}`);
 			});
 		}
 	});
@@ -152,9 +152,9 @@ const PlayingBoard = () => {
 	columnsToKeep.forEach((col) => {
 		if (col.x === xCheck) {
 			let ans = col.y;
-			console.log(`ans: `, ans);
+			//console.log(`ans: `, ans);
 			ans.forEach((item) => {
-				console.log(`success: xCheck:${xCheck}===${item}`);
+				//console.log(`success: xCheck:${xCheck}===${item}`);
 			});
 		}
 	});
@@ -171,13 +171,13 @@ const PlayingBoard = () => {
 				)
 			) {
 				let ans = Number(col.x) - 2;
-				console.log(packyManX + "," + ans);
+				//console.log(packyManX + "," + ans);
 				if (ans === packyManX) {
 					let yList = col.y;
-					console.log(yList);
+					//console.log(yList);
 					if (yList !== []) {
 						for (let yl = 0; yl < yList.length; yl++) {
-							console.log(`yList[${yl}]:`, yList[yl]);
+							//console.log(`yList[${yl}]:`, yList[yl]);
 							if (
 								yList[yl].start - 2 <= packyManY &&
 								yList[yl].end - 2 >= packyManY
@@ -209,24 +209,24 @@ const PlayingBoard = () => {
 				)
 			) {
 				let ans = Number(col.x) - 2;
-				console.log(packyManX + "," + ans);
+				//console.log(packyManX + "," + ans);
 				if (ans === packyManX) {
-					console.log(`packyManX:`, packyManX);
+					//console.log(`packyManX:`, packyManX);
 					let yList = col.y;
-					console.log(yList);
+					//console.log(yList);
 					if (yList !== []) {
 						for (let yl = 0; yl < yList.length; yl++) {
 							if (
 								yList[yl].start - 2 <= packyManY &&
 								yList[yl].end - 2 > packyManY
 							) {
-								console.log(`yList[${yl}]:`, yList[yl]);
+							//	console.log(`yList[${yl}]:`, yList[yl]);
 								if (
 									packyManY < yList[yl].end - 2 &&
 									packyManY >= yList[yl].start - 2
 								) {
 									disableDown = false;
-									console.log(`moving down`);
+								//	console.log(`moving down`);
 									return;
 								} else {
 									disableDown = true;
@@ -234,7 +234,7 @@ const PlayingBoard = () => {
 								}
 							} else if (packyManY >= yList[yl].end - 2) {
 								disableDown = true;
-								console.log(`no more moving down`);
+								//console.log(`no more moving down`);
 							}
 						}
 					}
@@ -245,23 +245,23 @@ const PlayingBoard = () => {
 	}
 	function checkXLeft(packyManX, packyManY) {
 		rowsToKeep.forEach((row) => {
-			console.log(row.y - 2);
+			//console.log(row.y - 2);
 			packyManY = Number(packyManY);
 			if ([4.5, 14.5, 24.5, 34.5, 44.5, 54.5].includes(packyManY)) {
 				let ans = Number(row.y - 2); //adjust for placement of stroopwafels
 				if (ans === Number(packyManY)) {
-					console.log(`match!!!`);
+					//console.log(`match!!!`);
 					let xList = row.x;
-					console.log(`xList: `, xList);
+					//console.log(`xList: `, xList);
 					if (xList !== []) {
 						for (let xl = 0; xl < xList.length; xl++) {
-							console.log(`xList[${xl}]:`, xList[xl]);
+							//console.log(`xList[${xl}]:`, xList[xl]);
 							if (
 								packyManX <= xList[xl].end - 2 &&
 								packyManX > xList[xl].start - 2
 							) {
 								disableLeft = false;
-								console.log(`moving left`);
+								//console.log(`moving left`);
 								return;
 							} else disableLeft = true;
 						}
@@ -269,28 +269,28 @@ const PlayingBoard = () => {
 				}
 			} else disableLeft = true;
 		});
-		console.log(`disableLeft`, disableLeft);
+		//console.log(`disableLeft`, disableLeft);
 		return disableLeft;
 	}
 
 	function checkXRight(packyManX, packyManY) {
 		rowsToKeep.forEach((row) => {
-			console.log(row.y - 2);
+			//console.log(row.y - 2);
 			packyManY = Number(packyManY);
 			if ([4.5, 14.5, 24.5, 34.5, 44.5, 54.5].includes(packyManY)) {
 				let ans = Number(row.y - 2); //adjust for placement of stroopwafels
 				if (ans === Number(packyManY)) {
-					console.log(`match!!!`);
+					//console.log(`match!!!`);
 					let xList = row.x;
 					if (xList !== []) {
 						for (let xl = 0; xl < xList.length; xl++) {
-							console.log(`xList[${xl}]:`, xList[xl]);
+							//console.log(`xList[${xl}]:`, xList[xl]);
 							if (
 								packyManX >= xList[xl].start - 2 &&
 								packyManX < xList[xl].end - 2
 							) {
 								disableRight = false;
-								console.log(`moving right`);
+								//console.log(`moving right`);
 								return;
 							} else disableRight = true;
 						}
@@ -298,7 +298,7 @@ const PlayingBoard = () => {
 				}
 			} else disableRight = true;
 		});
-		console.log(disableRight);
+		//console.log(disableRight);
 		return disableRight;
 	}
 
@@ -327,8 +327,8 @@ const PlayingBoard = () => {
 		let packyman = document.getElementById("packy");
 		let packyManY = packyman.offsetTop / 16;
 		let packyManX = packyman.offsetLeft / 16;
-		console.log(`X:`, packyManX);
-		console.log(`checkY `, checkYUp(packyManX, packyManY));
+	//	console.log(`X:`, packyManX);
+		//console.log(`checkY `, checkYUp(packyManX, packyManY));
 		let disableUp = checkYUp(packyManX, packyManY);
 
 		if (disableUp === false) {
@@ -351,7 +351,7 @@ const PlayingBoard = () => {
 		let packyManY = packyman.offsetTop / 16;
 		let packyManX = packyman.offsetLeft / 16;
 		let disableDown = checkYDown(packyManX, packyManY);
-		console.log(`disdown: `, disableDown);
+		//console.log(`disdown: `, disableDown);
 		if (disableDown === false) {
 			document.getElementById("packy").classList.add("down", "open");
 			document.getElementById("packy").style.top =
@@ -378,8 +378,8 @@ const PlayingBoard = () => {
 			document.getElementById("packy").style.left =
 				(packyman.offsetLeft / 16 - 0.25).toString() + "rem";
 			times++;
-			console.log(`XLeft:`, packyman.offsetLeft / 16);
-			console.log(`yTop: `, packyman.offsetTop / 16);
+			//console.log(`XLeft:`, packyman.offsetLeft / 16);
+			//console.log(`yTop: `, packyman.offsetTop / 16);
 			if (times % 4 === 0) {
 				document.getElementById("packy").classList.add("closed");
 			} else {
